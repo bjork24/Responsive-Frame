@@ -3,20 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
-  <link rel="stylesheet" href="http://bjork24.github.io/Responsive-Frame/css/styles.css">
-  <script src="http://bjork24.github.io/Responsive-Frame/js/frame.js"></script>
 </head>
 <body>
 
-  <header>
-    <input type="range" id="small-frame-slider" min="10" value="30" max="90" step="10" onchange="outputUpdate(value)" />
-    <output for="small-frame-slider" id="small-frame-size">30%</output>
-  </header>
-
-  <div id="frames">
-    <iframe id="small-frame" src="http://www.polygon.com" frameborder="0"></iframe>
-    <iframe id="large-frame" src="http://www.polygon.com" frameborder="0"></iframe>
-  </div>
+  <a href="javascript:(function(){var%20d=document;d.write('%3C!doctype%20html%3E%3Chtml%20lang=%22en%22%3E%3Chead%3E%3Cmeta%20charset=%22UTF-8%22%3E%3Ctitle%3E'+d.title+'%20-%20Responsive%20Frame%3C/title%3E%3Clink%20rel=%22stylesheet%22%20href=%22http://bjork24.github.io/Responsive-Frame/css/styles.css%22%3E%3Cscript%20src=%22http://bjork24.github.io/Responsive-Frame/js/frame.js%22%3E%3C/script%3E%3C/head%3E%3Cbody%3E%3Cheader%3E%3Cinput%20type=%22range%22%20id=%22small-frame-slider%22%20min=%2210%22%20value=%2230%22%20max=%2290%22%20step=%2210%22%20onchange=%22outputUpdate(value)%22%20/%3E%3Coutput%20for=%22small-frame-slider%22%20id=%22small-frame-size%22%3E30%25%3C/output%3E%3C/header%3E%3Cdiv%20id=%22frames%22%3E%3Ciframe%20id=%22small-frame%22%20src=%22'%20+%20d.URL%20+%20'%22%20frameborder=%220%22%3E%3C/iframe%3E%3Ciframe%20id=%22large-frame%22%20src=%22'%20+%20d.URL%20+%20'%22%20frameborder=%220%22%3E%3C/iframe%3E%3C/div%3E%3C/body%3E%3C/html%3E');})();">Drag me to your bookmarks!</a>
 
 </body>
 </html>
