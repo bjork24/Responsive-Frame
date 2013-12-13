@@ -1,4 +1,37 @@
+@import "compass/reset";
+@import "compass/utilities/general/clearfix";
+
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #222;
+  overflow: hidden;
+}
+
+header {
+  position: absolute;
+  background-color: rgba(0,0,0,0.7);
+  width: 100vw;
+  padding: 20px 30px;
+  color: #FFF;
+}
+
+#frames {
+  @include clearfix;
+}
+
+#small-frame {
+  float: left;
+  width: 30vw;
+  height: 100vh;
+}
+
+#large-frame {
+  float: right;
+  width: 70vw;
+  height: 100vh;
+  border-left: 2px solid #000;
 }

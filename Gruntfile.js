@@ -12,7 +12,7 @@ module.exports = function (grunt) {
       server: {
         options: {
           port: 2424,
-          base: 'public',
+          base: '',
           livereload: true,
           keepalive: true
         }
@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 
     watch: {
       css: {
-        files: 'public/scss/*.scss',
+        files: 'scss/*.scss',
         tasks: ['compass'],
         options: {
           livereload: true,
@@ -31,7 +31,7 @@ module.exports = function (grunt) {
 
     jshint: {
       files: {
-        src: ['public/js/*.js', 'Gruntfile.js']
+        src: ['js/*.js', 'Gruntfile.js']
       },
       options: {
         curly: true,
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
         globals: {
           jQuery: true
         },
-        ignores: ['public/js/*.min.js']
+        ignores: ['js/*.min.js']
       }
     },
 
@@ -59,8 +59,8 @@ module.exports = function (grunt) {
     compass: {
       dev: {
         options: {
-          sassDir: 'public/scss',
-          cssDir: 'public/css',
+          sassDir: 'scss',
+          cssDir: 'css',
           trace: true,
           force: true,
           outputStyle: 'expanded'
@@ -75,41 +75,10 @@ module.exports = function (grunt) {
           logConcurrentOutput: true
         }
       }
-    },
-
-    shell: {
-      options: {
-        stdout: true
-      },
-      newRepo: {
-        command: [
-          'rm -rf .git',
-          'git init',
-          'git add .',
-          'git commit -m "New Grunt Up Instance"',
-          'git remote add origin <%= grunt.config("repo") %>',
-          'git push -u origin master',
-          'cd ..',
-          'git clone <%= grunt.config("repo") %>'
-        ].join('&&')
-      }
     }
 
   });
 
   grunt.registerTask('server', ['concurrent:target']);
-
-  grunt.registerTask('init', 'Remove git and set up new repo tracking', function(n) {
-    var repo = grunt.option('repo'), directory;
-    if ( repo == null ) {
-      grunt.log.warn('You must specify a repo (e.g. grunt init --repo=git@github.com:bjork24/grunt-up.git)');
-    } else {
-      directory = repo.split('/');
-      directory = directory[directory.length-1].replace('.git','');
-      grunt.config('repo', repo);
-      grunt.config('repoDir', directory);
-      grunt.task.run('shell:newRepo');
-    }
-  });
 
 };

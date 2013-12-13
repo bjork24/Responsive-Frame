@@ -6,6 +6,24 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  
+
+  <header>
+    <input type="range" id="small-frame-slider" min="10" value="30" max="90" step="10" onchange="outputUpdate(value)" />
+    <output for="small-frame-slider" id="small-frame-size">30%</output>
+  </header>
+
+  <div id="frames">
+    <iframe id="small-frame" src="http://www.polygon.com" frameborder="0"></iframe>
+    <iframe id="large-frame" src="http://www.polygon.com" frameborder="0"></iframe>
+  </div>
+
+  <script>
+  function outputUpdate(size) {
+    document.querySelector('#small-frame-size').value = size + '%';
+    document.getElementById('small-frame').style.width = size + 'vw';
+    document.getElementById('large-frame').style.width = (100 - size) + 'vw';
+  }
+  </script>
+
 </body>
 </html>
