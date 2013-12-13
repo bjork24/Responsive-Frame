@@ -17,6 +17,13 @@ header {
   width: 100vw;
   padding: 20px 30px;
   color: #FFF;
+  transition: all 500ms ease;
+  &.seen {
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 #frames {

@@ -82,22 +82,31 @@ header {
   width: 100vw;
   padding: 20px 30px;
   color: #FFF;
+  transition: all 500ms ease;
+}
+/* line 21, ../scss/styles.scss */
+header.seen {
+  opacity: 0;
+}
+/* line 23, ../scss/styles.scss */
+header.seen:hover {
+  opacity: 1;
 }
 
-/* line 22, ../scss/styles.scss */
+/* line 29, ../scss/styles.scss */
 #frames {
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 26, ../scss/styles.scss */
+/* line 33, ../scss/styles.scss */
 #small-frame {
   float: left;
   width: 30vw;
   height: 100vh;
 }
 
-/* line 32, ../scss/styles.scss */
+/* line 39, ../scss/styles.scss */
 #large-frame {
   float: right;
   width: 70vw;
