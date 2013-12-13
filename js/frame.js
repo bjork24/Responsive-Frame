@@ -6,4 +6,4 @@ function outputUpdate(size) {
 
 setTimeout(function() {
   document.getElementsByTagName('header')[0].className = "seen";
-}, 10000);
+}, 5000);
